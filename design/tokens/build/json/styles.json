@@ -1,0 +1,11 @@
+{
+  "ColorPrimary": "#0ac07d",
+  "ColorSecondary": "#4579ff",
+  "ColorError": "#ff6666",
+  "ColorWhite": "#ffffff",
+  "ColorBackground": "#ffffff",
+  "FormsColorFocused": "rgba(10, 192, 125, 0.2)",
+  "FormsColorUnchecked": "rgba(10, 192, 125, 0.2)",
+  "FormsColorDisabled": "rgba(10, 192, 125, 0.1)",
+  "FormsColorBorder": "rgba(0, 0, 0, 1)"
+}

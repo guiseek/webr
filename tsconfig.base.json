@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@webr/ng-forms": ["libs/ng/forms/src/index.ts"],
+      "@webr/util-decorators": ["libs/util/decorators/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
