@@ -8,6 +8,10 @@ input[type="text"] {
   border-color: $color-primary;
   outline-color: $color-secondary;
   outline-offset: 4px;
+
+  &.webr-invalid.webr-touched {
+    border-color: $color-error;
+  }
 }
 
 input[type="radio"],

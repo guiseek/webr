@@ -1,4 +1,4 @@
-import { ViewEncapsulation, Component } from '@angular/core'
+import { ViewEncapsulation, Component, HostBinding } from '@angular/core'
 
 @Component({
   selector: 'input[webr][type="text"]',

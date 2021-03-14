@@ -1,8 +1,4 @@
-import {
-  NgControl,
-  AbstractControl,
-  DefaultValueAccessor,
-} from '@angular/forms'
+import { NgControl, DefaultValueAccessor } from '@angular/forms'
 import {
   Self,
   OnInit,
@@ -10,12 +6,30 @@ import {
   Directive,
   ElementRef,
   Renderer2,
+  HostBinding,
 } from '@angular/core'
 
 @Directive({ selector: 'input[webr]' })
 export class WebrInputDirective extends DefaultValueAccessor implements OnInit {
-  public formControlName?: string = ''
-  public formControl?: AbstractControl
+  @HostBinding('class.webr-untouched')
+  get formUnTouched() {
+    return this.ngControl?.untouched
+  }
+
+  @HostBinding('class.webr-touched')
+  get formTouched() {
+    return this.ngControl?.touched
+  }
+
+  @HostBinding('class.webr-pristine')
+  get formPristine() {
+    return this.ngControl?.pristine
+  }
+
+  @HostBinding('class.webr-invalid')
+  get formInvalid() {
+    return this.ngControl?.invalid
+  }
 
   constructor(
     @Self()
