@@ -25,7 +25,8 @@
     "@nrwl/angular:library": {
       "style": "scss",
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "strict": true
     },
     "@nrwl/angular:component": {
       "style": "scss"
@@ -48,6 +49,9 @@
             "tsConfig": "apps/demo/tsconfig.app.json",
             "aot": true,
             "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["design/tokens/build"]
+            },
             "styles": ["apps/demo/src/styles.scss"],
             "scripts": []
           },
@@ -114,6 +118,22 @@
             "jestConfig": "apps/demo/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "tokens": {
+          "builder": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": {
+            "command": "npx style-dictionary clean && npx style-dictionary build",
+            "cwd": "design/tokens"
+          },
+          "configurations": {
+            "clean": {
+              "command": "npx style-dictionary clean"
+            },
+            "build": {
+              "command": "npx style-dictionary build"
+            }
+          }
         }
       }
     },
@@ -139,6 +159,43 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/demo-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "ng-forms": {
+      "projectType": "library",
+      "root": "libs/ng/forms",
+      "sourceRoot": "libs/ng/forms/src",
+      "prefix": "webr",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/ng/forms/tsconfig.lib.json",
+            "project": "libs/ng/forms/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/ng/forms/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ng/forms/src/**/*.ts",
+              "libs/ng/forms/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ng/forms"],
+          "options": {
+            "jestConfig": "libs/ng/forms/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
