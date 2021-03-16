@@ -1,0 +1,116 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label webr>
+    <input webr type="text" formControlName="name" />
+    <span class="label">Nome</span>
+  </label>
+
+  <label webr>
+    <span class="label">Email</span>
+
+    <input webr type="email" formControlName="email" />
+    <span webr-error="email">Endereço inválido</span>
+  </label>
+
+  <label webr>
+    <span class="label">Mensagem</span>
+    <textarea webr formControlName="message"></textarea>
+  </label>
+
+  <label webr>
+    <input webr type="number" formControlName="age" />
+    <span class="label">Idade</span>
+  </label>
+
+  <fieldset webr>
+    <legend>Opções</legend>
+
+    <label webr-label>
+      <span class="label">M</span>
+      <input webr type="radio" name="sexo" formControlName="sexo" value="M" />
+    </label>
+
+    <label webr-label>
+      <span class="label">F</span>
+      <input webr type="radio" name="sexo" formControlName="sexo" value="F" />
+    </label>
+  </fieldset>
+
+  <label webr-label>
+    <span class="label">Indeterminado</span>
+    <input
+    webr
+    type="checkbox"
+    name="indeterminate"
+    formControlName="indeterminate"
+    value="opa"
+    />
+  </label>
+  <label webr-label>
+    <span class="label">Lí e aceito</span>
+    <input
+      webr
+      type="checked"
+      name="termos"
+      formControlName="termos"
+      value="true"
+    />
+  </label>
+
+  <!-- <fieldset webr>
+    <legend>Termos</legend>
+
+  </fieldset> -->
+
+  <label webr>
+    <input webr type="text" formControlName="cpf" />
+    <span class="label">CPF</span>
+  </label>
+</form>
+
+<pre>{{ form.value | json }}</pre>
+
+<!-- <form>
+  <label webr class="group">
+    <input webr type="text" required>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <span>Name</span>
+  </label>
+  <label webr class="group">
+    <input webr type="email" required>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <span>Email</span>
+  </label>
+  <label webr class="group">
+    <input webr type="url" required>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <span>URL</span>
+  </label>
+  <label webr class="group">
+    <input webr type="url" disabled>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <span>URL</span>
+  </label>
+  <label webr class="group">
+    <textarea webr type="url"></textarea>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <span>URL</span>
+  </label>
+
+  <div class="btn-box">
+    <button class="btn btn-submit" type="submit">submit</button>
+  <button class="btn btn-cancel" type="button">cancel</button>
+  </div>
+</form> -->
+
+<!--
+<label for="inp" class="inp">
+  <input type="text" id="inp" placeholder="&nbsp;">
+  <span class="label">Label</span>
+  <span class="focus-bg"></span>
+</label>
+ -->

@@ -50,7 +50,7 @@
             "aot": true,
             "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
             "stylePreprocessorOptions": {
-              "includePaths": ["design/tokens/build"]
+              "includePaths": ["design/tokens/build", "libs/webr/styles/src"]
             },
             "styles": ["apps/demo/src/styles.scss"],
             "scripts": []
@@ -163,43 +163,6 @@
         }
       }
     },
-    "ng-forms": {
-      "projectType": "library",
-      "root": "libs/ng/forms",
-      "sourceRoot": "libs/ng/forms/src",
-      "prefix": "webr",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/ng/forms/tsconfig.lib.json",
-            "project": "libs/ng/forms/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/ng/forms/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/ng/forms/src/**/*.ts",
-              "libs/ng/forms/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ng/forms"],
-          "options": {
-            "jestConfig": "libs/ng/forms/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "workspace": {
       "architect": {
         "version": {
@@ -210,6 +173,64 @@
         }
       },
       "root": "."
+    },
+    "webr-forms": {
+      "projectType": "library",
+      "root": "libs/webr/forms",
+      "sourceRoot": "libs/webr/forms/src",
+      "prefix": "webr",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/webr/forms/tsconfig.lib.json",
+            "project": "libs/webr/forms/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/webr/forms/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/webr/forms/src/**/*.ts",
+              "libs/webr/forms/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/webr/forms"],
+          "options": {
+            "jestConfig": "libs/webr/forms/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "webr-styles": {
+      "root": "libs/webr/styles",
+      "sourceRoot": "libs/webr/styles/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/webr/styles/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/webr/styles"],
+          "options": {
+            "jestConfig": "libs/webr/styles/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

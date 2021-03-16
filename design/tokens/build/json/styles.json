@@ -3,9 +3,18 @@
   "ColorSecondary": "#4579ff",
   "ColorError": "#ff6666",
   "ColorWhite": "#ffffff",
+  "ColorBlack": "#111111",
   "ColorBackground": "#ffffff",
+  "ColorMuted": "#ffffff",
   "FormsColorFocused": "rgba(10, 192, 125, 0.2)",
   "FormsColorUnchecked": "rgba(10, 192, 125, 0.2)",
   "FormsColorDisabled": "rgba(10, 192, 125, 0.1)",
-  "FormsColorBorder": "rgba(0, 0, 0, 1)"
+  "FormsColorBorder": "rgba(10, 192, 125, 1)",
+  "FormsColorText": "rgba(17, 17, 17, 1)",
+  "ButtonHoverType": "dropShadow",
+  "ButtonHoverRadius": 4,
+  "ButtonHoverColor": "rgba(0, 0, 0, 0.25)",
+  "ButtonHoverOffsetX": 0,
+  "ButtonHoverOffsetY": 4,
+  "ButtonHoverSpread": 0
 }

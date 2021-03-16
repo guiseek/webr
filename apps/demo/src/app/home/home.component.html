@@ -1,10 +1,22 @@
-<form [formGroup]="form" class="light">
+<router-outlet></router-outlet>
+<!-- <form [formGroup]="form" class="light">
   <div>
-    <p>Input</p>
+    <section webr>
+      <span class="webr-label">Input</span>
+      <input webr type="text" formControlName="text" />
+      <span webr-error controlName="text"> Campo obrigatório </span>
+    </section>
 
     <section webr>
-      <input webr type="text" name="text" formControlName="text" />
-      <span webr-error controlName="text"> Campo obrigatório </span>
+      <span class="webr-label">Email</span>
+      <input webr type="email" formControlName="email" />
+      <span webr-error controlName="email"> Email inválido </span>
+    </section>
+
+    <section webr>
+      <span class="webr-label">Search</span>
+      <input webr type="search" formControlName="search" />
+      <span webr-error controlName="search"> Muito curto </span>
     </section>
 
     <hr />
@@ -17,6 +29,7 @@
     </label>
 
     <hr />
+
     <p>Estático</p>
 
     <label webr>
@@ -29,10 +42,6 @@
       <input webr type="radio" formControlName="radio" [value]="20" />
     </label>
 
-    <label webr>
-      <span class="webr-label">Radio 30</span>
-      <input webr type="radio" formControlName="radio" [value]="30" />
-    </label>
 
     <hr />
     <p>Dinâmico</p>
@@ -42,11 +51,17 @@
       <input
         webr
         type="radio"
+        [compareWith]="compareFn"
         formControlName="radios"
-        [value]="item.value.id"
+        [value]="item.value"
       />
     </label>
   </div>
+
+  <button webr type="button">
+    <i webr class="material-icons">face</i>
+    Enviar
+  </button>
 </form>
 
-<pre>{{ form.value | json }}</pre>
+<pre>{{ form.value | json }}</pre> -->
