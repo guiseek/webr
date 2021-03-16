@@ -9,15 +9,17 @@ import { Component } from '@angular/core'
 export class HomeComponent {
   form = this._fb.group({
     text: ['', Validators.required],
-    checkbox: [false, Validators.requiredTrue],
-    radios: [3],
+    email: ['', Validators.email],
+    search: ['', Validators.minLength(2)],
+    checkbox: [true, Validators.requiredTrue],
+    radios: [],
     radio: [20],
   })
 
   items = []
 
   compareFn(c1: any, c2: any): boolean {
-    return c1 === c2
+    return c1.id === c2.id
   }
 
   constructor(private _fb: FormBuilder) {
@@ -27,6 +29,10 @@ export class HomeComponent {
         { value: { id: 2, name: 'Dois' }, name: 'Item 2' },
         { value: { id: 3, name: 'Três' }, name: 'Item 3' },
       ]
+
+      window.setTimeout(() => {
+        this.form.get('radios').setValue({ id: 1, name: 'Um' })
+      }, 2000)
     }, 3000)
   }
 

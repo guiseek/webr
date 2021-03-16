@@ -1,3 +1,7 @@
 module.exports = {
-  projects: ['<rootDir>/apps/demo', '<rootDir>/libs/ng/forms'],
+  projects: [
+    '<rootDir>/apps/demo',
+    '<rootDir>/libs/webr/forms',
+    '<rootDir>/libs/webr/styles',
+  ],
 }

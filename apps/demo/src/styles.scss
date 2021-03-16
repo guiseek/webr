@@ -1,23 +1,24 @@
+@import 'webr';
+
 /* You can add global styles to this file, and also import other style files */
+
+// VARIABLES // ============================== //
+// $bg-color: #424242;
+// $hl-color: #2196F3;
+// $muted-color: mix(white, $bg-color, 70%);
+// $trans-time: 300ms;
+// $width: 320px;
+
 
 html,
 body {
   height: 100%;
 }
 
-html {
-  box-sizing: border-box;
-  height: 100%;
-}
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-body {
-  margin: 0;
-}
-
-pre {
-  font-size: 200%;
-}
+// body {
+//   margin: 0;
+//   display: grid;
+//   font-family: Roboto;
+//   -webkit-text-size-adjust: 100%;
+//   -webkit-font-smoothing: antialiased;
+// }

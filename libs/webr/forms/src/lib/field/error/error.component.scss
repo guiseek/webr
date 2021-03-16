@@ -1,0 +1,25 @@
+@import 'design/tokens/build/scss/variables';
+
+:host {
+  display: flex;
+  margin-top: 4px;
+  align-items: center;
+  color: $color-error;
+
+  opacity: 1;
+  transition: opacity 400ms ease-in-out;
+
+  &[aria-hidden="true"] {
+    opacity: 0;
+  }
+  &[aria-hidden="false"] {
+    opacity: 1;
+  }
+
+  svg {
+    display: inline-flex;
+    margin-right: 4px;
+    fill: $color-error;
+    height: 20px;
+  }
+}
