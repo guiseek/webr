@@ -9,17 +9,21 @@
   opacity: 1;
   transition: opacity 400ms ease-in-out;
 
-  &[aria-hidden="true"] {
+  &[aria-hidden='true'] {
     opacity: 0;
   }
-  &[aria-hidden="false"] {
+  &[aria-hidden='false'] {
     opacity: 1;
   }
 
-  svg {
+  .wrap-text {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .wrap-icon {
     display: inline-flex;
     margin-right: 4px;
     fill: $color-error;
-    height: 20px;
   }
 }

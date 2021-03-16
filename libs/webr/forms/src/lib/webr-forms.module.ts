@@ -6,12 +6,14 @@ import { WebrInputDirective } from './input/input.directive'
 import { WebrLabelComponent } from './label/label.component'
 import { WebrRadioComponent } from './input/radio.component'
 import { WebrFieldComponent } from './field/field.component';
+import { WebrFormDirective } from './form.directive'
 import { CommonModule } from '@angular/common'
-import { NgModule } from '@angular/core'
+import { NgModule } from '@angular/core';
 
 @NgModule({
   imports: [CommonModule],
   declarations: [
+    WebrFormDirective,
     WebrInputComponent,
     WebrInputDirective,
     WebrLabelComponent,
@@ -22,6 +24,7 @@ import { NgModule } from '@angular/core'
     WebrFieldLabelComponent,
   ],
   exports: [
+    WebrFormDirective,
     WebrInputComponent,
     WebrInputDirective,
     WebrLabelComponent,

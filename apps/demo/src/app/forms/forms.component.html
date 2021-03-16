@@ -1,70 +1,86 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form webr [formGroup]="form" (ngSubmit)="onSubmit()" (send)="onSend($event)">
   <label webr>
-    <input webr type="text" formControlName="name" />
-    <span class="label">Nome</span>
+    <span class="label">Texto</span>
+    <input webr type="text" formControlName="text" />
+    <span webr-error="text">Obrigatório</span>
   </label>
 
   <label webr>
-    <span class="label">Email</span>
-
-    <input webr type="email" formControlName="email" />
-    <span webr-error="email">Endereço inválido</span>
+    <span class="label">Número</span>
+    <input webr type="number" formControlName="number" />
+    <span webr-error="number">Mínimo 18</span>
   </label>
 
   <label webr>
-    <span class="label">Mensagem</span>
-    <textarea webr formControlName="message"></textarea>
-  </label>
-
-  <label webr>
-    <input webr type="number" formControlName="age" />
-    <span class="label">Idade</span>
+    <span class="label">Área de texto</span>
+    <textarea webr formControlName="textarea"></textarea>
+    <span webr-error="textarea">Mínimo 2 caracteres</span>
   </label>
 
   <fieldset webr>
     <legend>Opções</legend>
 
     <label webr-label>
-      <span class="label">M</span>
-      <input webr type="radio" name="sexo" formControlName="sexo" value="M" />
+      <span class="label">Opção A</span>
+      <input webr type="radio" formControlName="radio" value="A" />
     </label>
 
     <label webr-label>
-      <span class="label">F</span>
-      <input webr type="radio" name="sexo" formControlName="sexo" value="F" />
+      <span class="label">Opção B</span>
+      <input webr type="radio" formControlName="radio" value="B" />
     </label>
   </fieldset>
 
   <label webr-label>
+    <input webr type="checkbox" formControlName="checkbox" />
+    <span class="label">Checkbox</span>
+  </label>
+
+  <label webr-label>
+    <input webr type="checkbox" formControlName="checked" />
+    <span class="label">Selecionado</span>
+  </label>
+
+  <label webr-label>
     <span class="label">Indeterminado</span>
     <input
-    webr
-    type="checkbox"
-    name="indeterminate"
-    formControlName="indeterminate"
-    value="opa"
-    />
-  </label>
-  <label webr-label>
-    <span class="label">Lí e aceito</span>
-    <input
       webr
-      type="checked"
-      name="termos"
-      formControlName="termos"
-      value="true"
+      type="checkbox"
+      name="indeterminate"
+      formControlName="indeterminate"
     />
   </label>
-
-  <!-- <fieldset webr>
-    <legend>Termos</legend>
-
-  </fieldset> -->
 
   <label webr>
-    <input webr type="text" formControlName="cpf" />
-    <span class="label">CPF</span>
+    <span class="label">E-mail</span>
+    <input webr type="email" formControlName="email" autocomplete="email" />
+    <span webr-error="email">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path fill="red" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+      </svg>
+      Endereço inválido
+    </span>
   </label>
+
+  <label webr>
+    <input
+      webr
+      type="password"
+      formControlName="password"
+      autocomplete="current-password"
+    />
+    <span class="label">Senha</span>
+    <span webr-error="password">Mínimo de 6 caracteres</span>
+  </label>
+
+  <label webr>
+    <span class="label">CPF</span>
+    <input webr type="text" formControlName="cpf" />
+    <span webr-error="cpf">CPF inválido</span>
+  </label>
+
+  <button type="submit">Enviar</button>
 </form>
 
 <pre>{{ form.value | json }}</pre>

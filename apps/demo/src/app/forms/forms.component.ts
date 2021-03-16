@@ -16,14 +16,9 @@ export class FormsComponent implements OnInit {
     checkbox: ['', WebrValidators.required],
     checked: [true, WebrValidators.required],
     indeterminate: [undefined, WebrValidators.required],
-    name: ['', WebrValidators.required],
     email: ['', [WebrValidators.required, WebrValidators.email]],
-    password: ['', WebrValidators.required, WebrValidators.minLength(6)],
-    message: ['', WebrValidators.maxLength(1000)],
-    age: ['', WebrValidators.min(18)],
+    password: ['', [WebrValidators.required, WebrValidators.minLength(6)]],
     cpf: ['', WebrValidators.cpf],
-    sexo: ['F', WebrValidators.required],
-    termos: [true, WebrValidators.requiredTrue],
   })
   constructor(readonly fb: FormBuilder) {}
 
@@ -31,5 +26,9 @@ export class FormsComponent implements OnInit {
 
   onSubmit() {
     console.log(this.form.value)
+  }
+
+  onSend(data: any) {
+    console.log(data)
   }
 }
