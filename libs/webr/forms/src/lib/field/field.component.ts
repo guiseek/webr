@@ -12,7 +12,8 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <ng-content select="legend"></ng-content>
-    <ng-content select="label[webr-label],div"></ng-content>
+    <ng-content select="label[webr-label],section,div"></ng-content>
+    <ng-content select="span[webr-error]"></ng-content>
   `,
 })
 export class WebrFieldComponent implements AfterContentInit {

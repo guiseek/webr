@@ -6,6 +6,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core'
   template: `
     <ng-content [attr.select]="selectors"></ng-content>
     <ng-content select="span.label"></ng-content>
+    <ng-content select="span[webr-error]"></ng-content>
   `,
   styles: [],
 })
