@@ -11,6 +11,7 @@
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",
+    "deploy": "nx run demo:build --prod",
     "build:forms": "nx build webr-forms --tsConfig=libs/webr/forms/tsconfig.lib.prod.json",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",

@@ -6,25 +6,15 @@ import { NgModule } from '@angular/core'
 import { WebrFormsModule } from '@webr/forms'
 
 import { FormsComponent } from './forms/forms.component'
-import { HomeComponent } from './home/home.component'
 import { AppComponent } from './app.component'
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, FormsComponent],
+  declarations: [AppComponent, FormsComponent],
   imports: [
     BrowserModule,
     WebrFormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      {
-        path: 'home',
-        component: HomeComponent,
-      },
-      {
-        path: '',
-        component: FormsComponent,
-      },
-    ]),
+    RouterModule.forRoot([{ path: '', component: FormsComponent }]),
   ],
   providers: [],
   bootstrap: [AppComponent],
