@@ -1,5 +1,6 @@
 <form
   webr
+  id="demo"
   [formGroup]="form"
   [touchedOnSend]="true"
   (ngSubmit)="onSubmit()"
@@ -36,9 +37,17 @@
       <input webr type="radio" formControlName="radio" value="B" />
     </label>
     <span webr-error="radio">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        height="24"
+        width="24"
+      >
         <path d="M0 0h24v24H0z" fill="none" />
-        <path fill="red" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+        <path
+          fill="red"
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+        />
       </svg>
       Opção errada
     </span>
@@ -87,54 +96,8 @@
     <input webr type="text" formControlName="cpf" />
     <span webr-error="cpf">CPF inválido</span>
   </label>
-
-  <button type="submit">Enviar</button>
 </form>
 
+<button form="demo" type="submit">Enviar</button>
+
 <pre>{{ form.value | json }}</pre>
-
-<!-- <form>
-  <label webr class="group">
-    <input webr type="text" required>
-    <span class="highlight"></span>
-    <span class="bar"></span>
-    <span>Name</span>
-  </label>
-  <label webr class="group">
-    <input webr type="email" required>
-    <span class="highlight"></span>
-    <span class="bar"></span>
-    <span>Email</span>
-  </label>
-  <label webr class="group">
-    <input webr type="url" required>
-    <span class="highlight"></span>
-    <span class="bar"></span>
-    <span>URL</span>
-  </label>
-  <label webr class="group">
-    <input webr type="url" disabled>
-    <span class="highlight"></span>
-    <span class="bar"></span>
-    <span>URL</span>
-  </label>
-  <label webr class="group">
-    <textarea webr type="url"></textarea>
-    <span class="highlight"></span>
-    <span class="bar"></span>
-    <span>URL</span>
-  </label>
-
-  <div class="btn-box">
-    <button class="btn btn-submit" type="submit">submit</button>
-  <button class="btn btn-cancel" type="button">cancel</button>
-  </div>
-</form> -->
-
-<!--
-<label for="inp" class="inp">
-  <input type="text" id="inp" placeholder="&nbsp;">
-  <span class="label">Label</span>
-  <span class="focus-bg"></span>
-</label>
- -->
