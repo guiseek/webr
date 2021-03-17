@@ -16,6 +16,7 @@ export class WebrCheckboxComponent extends WebrInputDirective {
   public set indeterminate(value) {
     this._indeterminate = value
   }
+
   @Input()
   @HostBinding('indeterminate')
   public get indeterminate() {

@@ -1,6 +1,7 @@
 @import 'design/tokens/build/scss/variables';
 
 :host {
+  clear: both;
   display: flex;
   margin-top: 4px;
   align-items: center;

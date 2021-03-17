@@ -9,6 +9,7 @@ import {
 
 @Component({
   selector: 'span[webr-error]',
+  exportAs: 'webrErrorKeys',
   templateUrl: './error.component.html',
   styleUrls: ['./error.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -20,7 +21,7 @@ export class WebrErrorComponent implements OnInit {
 
   @HostBinding('attr.aria-hidden')
   get ariaHidden() {
-    return !(this._control?.dirty && this._control?.invalid)
+    return !(this._control?.touched && this._control?.invalid)
   }
 
   constructor(readonly container: ControlContainer) {
@@ -30,7 +31,7 @@ export class WebrErrorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.name === '') {
+    if (!this.name) {
       throw new Error('Informe o name')
     }
     const { control } = this.container

@@ -1,14 +1,15 @@
-import { WebrFieldLabelComponent } from './field/label/label.component';
-import { WebrErrorComponent } from './field/error/error.component';
+import { WebrFieldLabelComponent } from './field/label/label.component'
+import { WebrErrorComponent } from './field/error/error.component'
+import { WebrTextareaDirective } from './input/textarea.directive'
 import { WebrCheckboxComponent } from './input/checkbox.component'
 import { WebrInputComponent } from './input/input.component'
 import { WebrInputDirective } from './input/input.directive'
 import { WebrLabelComponent } from './label/label.component'
 import { WebrRadioComponent } from './input/radio.component'
-import { WebrFieldComponent } from './field/field.component';
+import { WebrFieldComponent } from './field/field.component'
 import { WebrFormDirective } from './form.directive'
 import { CommonModule } from '@angular/common'
-import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core'
 
 @NgModule({
   imports: [CommonModule],
@@ -21,6 +22,7 @@ import { NgModule } from '@angular/core';
     WebrFieldComponent,
     WebrErrorComponent,
     WebrCheckboxComponent,
+    WebrTextareaDirective,
     WebrFieldLabelComponent,
   ],
   exports: [
@@ -32,6 +34,7 @@ import { NgModule } from '@angular/core';
     WebrFieldComponent,
     WebrErrorComponent,
     WebrCheckboxComponent,
+    WebrTextareaDirective,
     WebrFieldLabelComponent,
   ],
 })

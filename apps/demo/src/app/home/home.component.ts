@@ -25,13 +25,13 @@ export class HomeComponent {
   constructor(private _fb: FormBuilder) {
     window.setTimeout(() => {
       this.items = [
-        { value: { id: 1, name: 'Um' }, name: 'Item 1' },
-        { value: { id: 2, name: 'Dois' }, name: 'Item 2' },
-        { value: { id: 3, name: 'Três' }, name: 'Item 3' },
+        { value: 1, name: 'Item 1' },
+        { value: 2, name: 'Item 2' },
+        { value: 3, name: 'Item 3' },
       ]
 
       window.setTimeout(() => {
-        this.form.get('radios').setValue({ id: 1, name: 'Um' })
+        this.form.get('radios').setValue(1)
       }, 2000)
     }, 3000)
   }

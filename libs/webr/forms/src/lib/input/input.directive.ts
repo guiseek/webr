@@ -9,7 +9,7 @@ import {
   HostBinding,
 } from '@angular/core'
 
-@Directive({ selector: 'input[webr],textarea[webr]' })
+@Directive({ selector: 'input[webr]' })
 export class WebrInputDirective extends DefaultValueAccessor {
   @HostBinding('class.webr-untouched')
   get formUnTouched() {

@@ -15,11 +15,11 @@ export type FormSendEvent = {
 
 @Directive({ selector: 'form[webr][formGroup]' })
 export class WebrFormDirective implements AfterViewInit {
-  @Input() formGroup!: FormGroup
+  @Input() formGroup = new FormGroup({})
 
   @Input() touchedOnSend = true
 
-  private readonly _form: HTMLFormElement
+  private readonly _form!: HTMLFormElement
 
   @Output() send = new EventEmitter<FormSendEvent>()
 
