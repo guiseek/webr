@@ -5,15 +5,18 @@ import { NgModule } from '@angular/core'
 
 import { WebrIconsModule, ICONS } from '@webr/icons'
 import { WebrFormsModule } from '@webr/forms'
+import { WebrMaskModule } from '@webr/mask'
 
 import { FormsComponent } from './forms/forms.component'
 import { AppComponent } from './app.component'
-import { IconsComponent } from './icons/icons.component'
+import { IconsComponent } from './icons/icons.component';
+import { MaskComponent } from './mask/mask.component'
 
 @NgModule({
-  declarations: [AppComponent, FormsComponent, IconsComponent],
+  declarations: [AppComponent, FormsComponent, IconsComponent, MaskComponent],
   imports: [
     BrowserModule,
+    WebrMaskModule,
     WebrFormsModule,
     ReactiveFormsModule,
     WebrIconsModule.forRoot({
@@ -24,7 +27,8 @@ import { IconsComponent } from './icons/icons.component'
     }),
     RouterModule.forRoot([
       { path: 'forms', component: FormsComponent },
-      { path: '', component: IconsComponent },
+      { path: 'icons', component: IconsComponent },
+      { path: '', component: MaskComponent },
     ]),
   ],
   providers: [],

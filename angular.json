@@ -48,7 +48,11 @@
             "polyfills": "apps/demo/src/polyfills.ts",
             "tsConfig": "apps/demo/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
+            "assets": [
+              "apps/demo/src/favicon.ico",
+              "apps/demo/src/CNAME",
+              "apps/demo/src/assets"
+            ],
             "stylePreprocessorOptions": {
               "includePaths": ["design/tokens/build", "libs/webr/styles/src"]
             },
@@ -264,6 +268,43 @@
           "outputs": ["coverage/libs/webr/icons"],
           "options": {
             "jestConfig": "libs/webr/icons/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "webr-mask": {
+      "projectType": "library",
+      "root": "libs/webr/mask",
+      "sourceRoot": "libs/webr/mask/src",
+      "prefix": "webr",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/webr/mask/tsconfig.lib.json",
+            "project": "libs/webr/mask/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/webr/mask/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/webr/mask/src/**/*.ts",
+              "libs/webr/mask/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/webr/mask"],
+          "options": {
+            "jestConfig": "libs/webr/mask/jest.config.js",
             "passWithNoTests": true
           }
         }

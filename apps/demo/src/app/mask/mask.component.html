@@ -1,0 +1,103 @@
+<p>mask works!</p>
+<div [formGroup]="form" class="demo-container">
+  <section>
+    <label webr>
+      <input
+        webr
+        mask="#DD DDD.DDD"
+        formControlName="simpleMask"
+        [validateMaskInput]="true"
+        placeholder="#23 464.123"
+        type="text"
+      />
+    </label>
+    <span output>
+      {{ form.get('simpleMask').value || '' }}
+    </span>
+  </section>
+  <section>
+    <label webr>
+      <input
+        webr
+        placeholder="1 AB"
+        formControlName="multiMask"
+        [validateMaskInput]="true"
+        [mask]="['W WW', 'WW WWWW', 'WWW WWWW WWWWW']"
+      />
+    </label>
+
+    <span output>
+      {{ form.get('multiMask').value || '' }}
+    </span>
+  </section>
+
+  <section>
+    <label webr>
+      <input
+        webr
+        mask="CC - CC.WW"
+        formControlName="unmaskedMask"
+        [validateMaskInput]="true"
+        placeholder="XY - AB.2e"
+        [unmasked]="true"
+      />
+    </label>
+  </section>
+
+  <section>
+    <label webr>
+      <input formControlName="simpleCurrency" placeholder="R$" webr currency />
+    </label>
+  </section>
+
+  <section>
+    <label webr>
+      <input formControlName="currency" placeholder="R$" webr currency />
+    </label>
+
+    <pre>{{ form.get('currency').value }}</pre>
+  </section>
+
+  <section>
+    <label webr>
+      <input
+        prefix="USD"
+        maxIntegerDigits="12"
+        formControlName="customCurrency"
+        thousandsSeparator=","
+        decimalSeparator="."
+        webr
+        currency
+      />
+    </label>
+
+    <pre>{{ form.get('currency').value }}</pre>
+  </section>
+  <section>
+    <label webr>
+      <input
+        formControlName="clearCurrency"
+        [allowNegatives]="true"
+        [validateOnInit]="false"
+        currency
+        webr
+      />
+    </label>
+
+    <pre>{{ form.get('currency').value }}</pre>
+  </section>
+  <section>
+    <label webr>
+      <input
+        prefix="BTC"
+        formControlName="custom2Currency"
+        maxIntegerDigits="1"
+        digitsAfterSeparator="8"
+        currency
+        webr
+      />
+    </label>
+
+    <pre>{{ form.get('currency').value }}</pre>
+  </section>
+</div>
