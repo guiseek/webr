@@ -1,0 +1,17 @@
+<label webr>
+  <span class="label">Busca</span>
+  <input webr type="text" [formControl]="search" />
+</label>
+
+<section class="grid">
+  <ng-container *ngFor="let item of list$ | async">
+    <figure>
+      <webr-svg-icon [key]="item.name"></webr-svg-icon>
+      <caption>
+        {{
+          item.name
+        }}
+      </caption>
+    </figure>
+  </ng-container>
+</section>

@@ -3,5 +3,6 @@ module.exports = {
     '<rootDir>/apps/demo',
     '<rootDir>/libs/webr/forms',
     '<rootDir>/libs/webr/styles',
+    '<rootDir>/libs/webr/icons',
   ],
 }

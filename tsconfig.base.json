@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@webr/forms": ["libs/webr/forms/src/index.ts"],
-      "@webr/styles": ["libs/webr/styles/src/index.ts"]
+      "@webr/styles": ["libs/webr/styles/src/index.ts"],
+      "@webr/icons": ["libs/webr/icons/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

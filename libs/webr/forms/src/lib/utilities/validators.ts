@@ -8,13 +8,13 @@ export const PATTERNS = {
    * w3.org spec html52
    * @see https://www.w3.org/TR/html52/sec-forms.html#valid-e-mail-address
    */
-  EMAIL: /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+  EMAIL: new RegExp(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/),
 
-  CPF: /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/,
+  CPF: new RegExp(/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/),
 
-  CNPJ: /^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/,
+  CNPJ: new RegExp(/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/),
 
-  CPF_CNPJ: /(^\d{3}\.\d{3}\.\d{3}\-\d{2}$)|(^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$)/,
+  CPF_CNPJ: new RegExp(/(^\d{3}\.\d{3}\.\d{3}\-\d{2}$)|(^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$)/),
 }
 
 export function forbiddenValidator(nameRe: RegExp): ValidatorFn {
@@ -26,7 +26,6 @@ export function forbiddenValidator(nameRe: RegExp): ValidatorFn {
 
 export function compareWith(fn: (o1: any, o2: any) => boolean): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } | null => {
-
     return fn.bind(control) ? { forbidden: { value: control.value } } : null
   }
 }

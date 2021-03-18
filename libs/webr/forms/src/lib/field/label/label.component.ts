@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core'
 
 @Component({
   selector: '[webr-label]',
@@ -11,6 +11,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core'
   styles: [],
 })
 export class WebrFieldLabelComponent {
+  @HostBinding('attr.aria-live')
+  addAriaLiveHostAttr = 'polite'
+
   readonly selectors = [
     'input[webr][type="radio"]',
     'input[webr][type="checkbox"]',

@@ -231,6 +231,43 @@
           }
         }
       }
+    },
+    "webr-icons": {
+      "projectType": "library",
+      "root": "libs/webr/icons",
+      "sourceRoot": "libs/webr/icons/src",
+      "prefix": "webr",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/webr/icons/tsconfig.lib.json",
+            "project": "libs/webr/icons/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/webr/icons/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/webr/icons/src/**/*.ts",
+              "libs/webr/icons/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/webr/icons"],
+          "options": {
+            "jestConfig": "libs/webr/icons/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
