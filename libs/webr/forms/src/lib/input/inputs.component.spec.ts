@@ -8,6 +8,7 @@ import { WebrCheckboxComponent } from './checkbox.component'
 import { WebrInputDirective } from './input.directive'
 import { WebrInputComponent } from './input.component'
 import { WebrRadioComponent } from './radio.component'
+import { WebrRangeComponent } from './range.component'
 
 const TMPL = {
   BEGIN: `<form webr [formGroup]="form">`,
@@ -28,6 +29,12 @@ const TMPL = {
   <label webr-label>
     <input webr type="radio" formControlName="radio" value="B" />
   </label>
+</fieldset>`,
+  RANGE: `<fieldset webr>
+  <label webr-label>
+  Range
+  <input webr type="range" formControlName="range" />
+</label>
 </fieldset>`,
   CHECKBOX: `<label webr-label>
   <input webr type="checkbox" formControlName="checkbox" />
@@ -59,6 +66,7 @@ class FormsHostComponent {
       WebrValidators.minLength(3),
     ]),
     radio: new FormControl('', WebrValidators.forbidden(/B/)),
+    range: new FormControl(50, WebrValidators.min(10)),
     checkbox: new FormControl(false, WebrValidators.requiredTrue),
     checked: new FormControl(true, WebrValidators.requiredTrue),
     indeterminate: new FormControl(null),
@@ -349,6 +357,54 @@ describe('Webr Radio Input', () => {
 
   it('deve aproveitar o formControlName caso não seja informado um name ', async () => {
     expect(spectator.element.getAttribute('name')).toEqual('radio')
+  })
+})
+
+describe('Webr Range Input', () => {
+  let spectator: SpectatorHost<WebrRangeComponent, FormsHostComponent>
+  const createHost = createForms<WebrRangeComponent>(WebrRangeComponent)
+
+  beforeEach(() => {
+    spectator = createHost(`${TMPL.BEGIN} ${TMPL.RANGE} ${TMPL.END}`)
+  })
+
+  it('deve instânciar o componente', async () => {
+    expect(spectator.component).toBeDefined()
+  })
+
+  it('ele deve iniciar válido', async () => {
+    expect(spectator.component.formValid).toBeTruthy()
+  })
+
+  it('ele deve iniciar no estado não tocado', async () => {
+    expect(spectator.element.classList.contains('webr-untouched')).toBeTruthy()
+  })
+  it('suas classes devem representar o estado de válido', async () => {
+    expect(spectator.element.classList.contains('webr-valid')).toBeTruthy()
+    expect(spectator.element.classList.contains('webr-invalid')).toBeFalsy()
+  })
+
+  it('entrando com B, deve mudar para inválido', async () => {
+    spectator.hostComponent.form?.patchValue({ range: 6 })
+    expect(spectator.component.formInvalid).toBeTruthy()
+  })
+
+  it('ao alterar para 18, deve mudar para válido', async () => {
+    spectator.hostComponent.form?.patchValue({ range: 20 })
+    expect(spectator.component.formInvalid).toBeFalsy()
+    expect(spectator.component.formValid).toBeTruthy()
+  })
+
+  it('suas classes devem representar o estado de válido', async () => {
+    spyOn(spectator.hostComponent.form, 'valueChanges')
+    spectator.hostComponent.form?.patchValue({ range: 20 })
+    spectator.detectChanges()
+    expect(spectator.element.classList.contains('webr-invalid')).toBeFalsy()
+    expect(spectator.element.classList.contains('webr-valid')).toBeTruthy()
+  })
+
+  it('deve aproveitar o formControlName caso não seja informado um name ', async () => {
+    expect(spectator.element.getAttribute('name')).toEqual('range')
   })
 })
 

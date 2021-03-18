@@ -7,6 +7,7 @@ import { WebrInputDirective } from './input/input.directive'
 import { WebrLabelComponent } from './label/label.component'
 import { WebrRadioComponent } from './input/radio.component'
 import { WebrFieldComponent } from './field/field.component'
+import { WebrRangeComponent } from './input/range.component'
 import { WebrFormDirective } from './form.directive'
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
@@ -24,6 +25,7 @@ import { NgModule } from '@angular/core'
     WebrCheckboxComponent,
     WebrTextareaDirective,
     WebrFieldLabelComponent,
+    WebrRangeComponent,
   ],
   exports: [
     WebrFormDirective,
@@ -36,6 +38,7 @@ import { NgModule } from '@angular/core'
     WebrCheckboxComponent,
     WebrTextareaDirective,
     WebrFieldLabelComponent,
+    WebrRangeComponent,
   ],
 })
 export class WebrFormsModule {}

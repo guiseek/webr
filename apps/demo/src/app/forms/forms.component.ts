@@ -19,6 +19,7 @@ export class FormsComponent {
     email: ['', [WebrValidators.required, WebrValidators.email]],
     password: ['', [WebrValidators.required, WebrValidators.minLength(6)]],
     cpf: ['', [WebrValidators.required, WebrValidators.cpf]],
+    range: [15, [WebrValidators.required, WebrValidators.min(10)]],
   })
   constructor(readonly fb: FormBuilder) {}
 

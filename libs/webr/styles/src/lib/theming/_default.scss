@@ -109,16 +109,123 @@ label.webr {
 }
 
 fieldset[webr] {
+  padding: 0;
   margin: 45px 0;
   border-width: 0 0 1px;
   border-bottom: 1px solid $muted-color;
   outline-color: $color-secondary;
   outline-offset: 4px;
   legend {
+    padding: 10px;
     color: $muted-color;
   }
 }
 
+label[webr-label] {
+  input[type='range'] {
+    margin: 2px;
+    appearance: none;
+    border-width: 0;
+    padding: 0;
+    flex: 1;
+    /* For Chromium */
+    &::-webkit-slider-runnable-track {
+      background-color: $color-secondary;
+
+      border-radius: 2px;
+      border-style: solid;
+      border-width: 0px;
+      cursor: pointer;
+      height: 8px;
+      margin: 10px 0;
+      width: 100%;
+    }
+
+    &::-webkit-slider-thumb {
+      background-color: $color-white;
+      border-color: $color-primary;
+
+      appearance: none;
+      border-width: 1px;
+      box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
+      border-radius: 4px;
+      cursor: pointer;
+      height: 36px;
+      margin-top: -14px;
+      width: 16px;
+    }
+    /* /For Chromium */
+
+    /* For Mozilla Firefox */
+    &::-moz-range-track {
+      background-color: $color-secondary;
+      border-color: $color-primary;
+
+      border-radius: 18px;
+      box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
+      cursor: pointer;
+      height: 8px;
+      width: 100%;
+    }
+
+    &::-moz-range-thumb {
+      background-color: $color-white;
+      border-color: $color-primary;
+
+      border-bottom-left-radius: 0.7rem 1rem;
+      border-bottom-right-radius: 1rem 0.9rem;
+      border-style: solid;
+      border-top-left-radius: 1rem 1rem;
+      border-top-right-radius: 1rem 0.6rem;
+      border-width: 1px;
+      box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
+      cursor: pointer;
+      height: 36px;
+      width: 16px;
+    }
+    /* End For Mozilla Firefox */
+
+    /* For IE */
+    &::-ms-track {
+      background: transparent;
+      border-color: transparent;
+      border-width: 16px 0;
+      color: transparent;
+      cursor: pointer;
+      height: 8px;
+      width: 100%;
+    }
+
+    &::-ms-fill-lower,
+    &::-ms-fill-upper {
+      background-color: $color-secondary;
+      border-color: $color-primary;
+
+      border-radius: 18px;
+      border-style: solid;
+      border-width: 1px;
+      box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
+    }
+
+    &::-ms-thumb {
+      background-color: $color-white;
+      border-color: $color-primary;
+
+      border: 1px solid $color-primary;
+      border-bottom-left-radius: 0.7rem 1rem;
+      border-bottom-right-radius: 1rem 0.9rem;
+      border-style: solid;
+      border-top-left-radius: 1rem 1rem;
+      border-top-right-radius: 1rem 0.6rem;
+      border-width: 1px;
+      box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
+      cursor: pointer;
+      height: 36px;
+      width: 16px;
+    }
+    /* End For IE */
+  }
+}
 label[webr-label] {
   margin: 16px 0;
   display: flex;
@@ -218,7 +325,7 @@ label[webr-label] {
 span[webr-error] {
   clear: both;
   display: flex;
-  margin-top: 4px;
+  margin: 4px 6px 6px;
   align-items: center;
   color: $color-error;
 

@@ -1,0 +1,8 @@
+/*
+  Add global transition styles to selector
+  @param string
+  @default all | 235ms | ease-in-out | 0
+*/
+@mixin transition($name:all, $duration:235ms, $animation:ease-in-out, $delay: 0s) {
+  transition: $name $duration $animation $delay;
+}

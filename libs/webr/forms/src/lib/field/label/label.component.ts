@@ -14,8 +14,12 @@ export class WebrFieldLabelComponent {
   @HostBinding('attr.aria-live')
   addAriaLiveHostAttr = 'polite'
 
+  @HostBinding('attr.aria-atomic')
+  addingAriaAtomicHostAttr = true
+
   readonly selectors = [
     'input[webr][type="radio"]',
     'input[webr][type="checkbox"]',
+    'input[webr][type="range"]',
   ].join(',')
 }

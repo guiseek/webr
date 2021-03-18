@@ -26,9 +26,9 @@ import { MaskComponent } from './mask/mask.component'
       },
     }),
     RouterModule.forRoot([
-      { path: 'forms', component: FormsComponent },
+      { path: '', component: FormsComponent },
       { path: 'icons', component: IconsComponent },
-      { path: '', component: MaskComponent },
+      { path: 'mask', component: MaskComponent },
     ]),
   ],
   providers: [],

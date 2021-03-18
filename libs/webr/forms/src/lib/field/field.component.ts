@@ -1,9 +1,9 @@
 import { NgControl } from '@angular/forms'
 import {
-  AfterContentInit,
-  ContentChild,
   Component,
   HostBinding,
+  ContentChild,
+  AfterContentInit,
   ChangeDetectionStrategy,
 } from '@angular/core'
 
@@ -11,12 +11,24 @@ import {
   selector: 'fieldset[webr]',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <ng-content select="legend"></ng-content>
-    <ng-content select="label[webr-label],section,div"></ng-content>
-    <ng-content select="span[webr-error]"></ng-content>
+    <ng-content [attr.select]="selectors.legend"></ng-content>
+    <ng-content [attr.select]="selectors.content"></ng-content>
+    <ng-content [attr.select]="selectors.error"></ng-content>
   `,
 })
 export class WebrFieldComponent implements AfterContentInit {
+  readonly selectors = {
+    legend: 'legend',
+    content: ['label', '[webr-label]', 'section', 'div'].join(','),
+    error: 'span[webr-error]',
+  }
+
+  @HostBinding('attr.aria-live')
+  addAriaLiveHostAttr = 'polite'
+
+  @HostBinding('attr.aria-atomic')
+  addingAriaAtomicHostAttr = true
+
   @ContentChild(NgControl) control!: NgControl
   ngAfterContentInit(): void {
     if (!this.control) {
