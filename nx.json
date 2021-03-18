@@ -20,6 +20,7 @@
     "demo-e2e": { "tags": [], "implicitDependencies": ["demo"] },
     "workspace": { "tags": [] },
     "webr-forms": { "tags": ["type:ui"] },
-    "webr-styles": { "tags": ["type:ui"] }
+    "webr-styles": { "tags": ["type:ui"] },
+    "webr-icons": { "tags": ["type:ui"] }
   }
 }

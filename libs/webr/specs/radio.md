@@ -1,4 +1,4 @@
-#  4.10.5.1.16. `Radio Button` state (`type=radio`)[](https://www.w3.org/TR/html52/sec-forms.html#radio-button-state-typeradio)
+# 4.10.5.1.16. `Radio Button` state (`type=radio`)[](https://www.w3.org/TR/html52/sec-forms.html#radio-button-state-typeradio)
 
 [Allowed ARIA role attribute values](https://www.w3.org/TR/html52/dom.html#allowed-aria-role-attribute-values):
 
@@ -6,7 +6,7 @@
 
 [Allowed ARIA state and property attributes](https://www.w3.org/TR/html52/dom.html#allowed-aria-state-and-property-attributes):
 
-[Global aria-* attributes](https://www.w3.org/TR/html52/dom.html#global-aria--attributes)
+[Global aria-\* attributes](https://www.w3.org/TR/html52/dom.html#global-aria--attributes)
 
 Any `aria-*` attributes [applicable to the allowed roles](https://www.w3.org/TR/html52/dom.html#allowed-aria-roles-states-and-properties).
 

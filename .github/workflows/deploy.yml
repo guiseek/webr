@@ -23,6 +23,8 @@ jobs:
         with:
           node-version: '12.x'
 
+      - run: git fetch origin main
+
       - name: Cache dependencies
         uses: actions/cache@v2
         with:
@@ -31,7 +33,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - run: npm ci
-      - run: npm run deploy
+
+      - name: Run unit tests
+        run: npm run testing
+
+      - name: Deploy
+        run: npm run deploy
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

@@ -21,7 +21,12 @@ export class WebrErrorComponent implements OnInit {
 
   @HostBinding('attr.aria-hidden')
   get ariaHidden() {
-    return !(this._control?.touched && this._control?.invalid)
+    return !(this._control?.invalid && this._control?.touched)
+    // Somente quando sujo
+    // return !(
+    //   this._control?.invalid &&
+    //   (this._control?.touched && this._control?.dirty)
+    // )
   }
 
   constructor(readonly container: ControlContainer) {

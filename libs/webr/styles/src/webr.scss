@@ -1,7 +1,7 @@
 @import './lib/tokens';
+@import './lib/mixins/breakpoints';
 @import './lib/theming/default';
 
 * {
   box-sizing: border-box;
 }
-

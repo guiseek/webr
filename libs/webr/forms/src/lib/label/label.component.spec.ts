@@ -1,25 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { WebrLabelComponent } from './label.component';
+import { WebrLabelComponent } from './label.component'
 
 describe('WebrLabelComponent', () => {
-  let component: WebrLabelComponent;
-  let fixture: ComponentFixture<WebrLabelComponent>;
+  let component: WebrLabelComponent
+  let fixture: ComponentFixture<WebrLabelComponent>
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WebrLabelComponent ]
-    })
-    .compileComponents();
-  });
+      declarations: [WebrLabelComponent],
+    }).compileComponents()
+  })
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WebrLabelComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(WebrLabelComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

@@ -12,40 +12,45 @@ import {
 @Directive({ selector: 'input[webr]' })
 export class WebrInputDirective extends DefaultValueAccessor {
   @HostBinding('class.webr-untouched')
-  get formUnTouched() {
+  public get formUnTouched() {
     return this.ngControl?.untouched
   }
 
   @HostBinding('class.webr-touched')
-  get formTouched() {
+  public get formTouched() {
     return this.ngControl?.touched
   }
 
   @HostBinding('class.webr-pristine')
-  get formPristine() {
+  public get formPristine() {
     return this.ngControl?.pristine
   }
 
   @HostBinding('class.webr-invalid')
-  get formInvalid() {
+  public get formInvalid() {
     return this.ngControl?.invalid
   }
 
+  @HostBinding('class.webr-valid')
+  public get formValid() {
+    return this.ngControl?.valid
+  }
+
   @HostBinding('class.webr-dirty')
-  get formDirty() {
+  public get formDirty() {
     return this.ngControl?.dirty
   }
 
   @HostBinding('class.webr-empty')
-  get formEmpty() {
+  public get formEmpty() {
     return (this.ngControl?.value || []).length === 0
   }
 
   @Input()
-  name: string = ''
+  public name = ''
 
   @Input()
-  formControlName: string = ''
+  public formControlName = ''
 
   @HostBinding('name')
   get controlName() {

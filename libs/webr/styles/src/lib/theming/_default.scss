@@ -1,23 +1,29 @@
 label.webr {
   margin: 45px 0;
   position: relative;
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
+
+  &.inline {
+    display: inline-flex;
+  }
 
   input,
   textarea {
-    background: none;
-    color: $forms-color-text;
-    font-size: 18px;
-    padding: 10px 10px 10px 5px;
-    display: block;
-    width: $width;
     border: none;
+    display: block;
+    font-size: 18px;
+    background: none;
     border-radius: 0;
+    padding: 10px 10px 10px 5px;
+
+    width: $width;
+    color: $forms-color-text;
     border-bottom: 1px solid $muted-color;
     &:focus {
       outline-color: rgba($color-secondary, 0.2);
     }
+
     &:focus ~ span.label,
     &:not(.webr-empty) ~ span.label {
       top: -14px;
@@ -76,6 +82,18 @@ label.webr {
       background: $color-error;
     }
   }
+
+  // @include sm {
+  //   // margin: 0 20px;
+  //   width: calc($width / 2);
+  //   // margin: 20px;
+  // }
+
+  // @include lg {
+  //   display: inline-flex;
+  //   width: calc(100% / 2 - 42px);
+  //   margin: 20px;
+  // }
 }
 
 @keyframes ripple {
@@ -100,6 +118,7 @@ fieldset[webr] {
     color: $muted-color;
   }
 }
+
 label[webr-label] {
   margin: 16px 0;
   display: flex;
@@ -193,5 +212,34 @@ label[webr-label] {
     &:after {
       border-radius: 50%;
     }
+  }
+}
+
+span[webr-error] {
+  clear: both;
+  display: flex;
+  margin-top: 4px;
+  align-items: center;
+  color: $color-error;
+
+  opacity: 1;
+  transition: opacity 400ms ease-in-out;
+
+  &[aria-hidden='true'] {
+    opacity: 0;
+  }
+  &[aria-hidden='false'] {
+    opacity: 1;
+  }
+
+  .wrap-text {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .wrap-icon {
+    display: inline-flex;
+    margin-right: 4px;
+    fill: $color-error;
   }
 }

@@ -2,13 +2,13 @@ import { ChangeDetectionStrategy, Component } from '@angular/core'
 
 @Component({
   selector: `
-    input[webr][type="text"],
-    input[webr][type="email"],
-    input[webr][type="number"],
-    input[webr][type="password"],
-    input[webr][type="search"],
-    input[webr][type="url"],
-    textarea[webr]
+    input[voxel][type="text"],
+    input[voxel][type="email"],
+    input[voxel][type="number"],
+    input[voxel][type="password"],
+    input[voxel][type="search"],
+    input[voxel][type="url"],
+    textarea[voxel]
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '',
