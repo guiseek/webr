@@ -1,0 +1,97 @@
+// Tooltips
+[tooltip-top],
+[tooltip-right],
+[tooltip-bottom],
+[tooltip-left] {
+  margin: 24px;
+  position: relative;
+
+  // Tooltip trigger
+  &:hover {
+    &::after {
+      opacity: 1;
+      transition: opacity 0.2s ease-out;
+    }
+  }
+
+  // Cria a tooltip::after element
+  &::after {
+    @include transition(opacity);
+    background-color: $color-white;
+    border-color: $color-secondary;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 2px;
+    color: $color-black;
+    font-size: 1em;
+    left: 50%;
+    min-width: 80px;
+    opacity: 0;
+    padding: 4px 8px;
+    position: absolute;
+    text-align: center;
+    top: -6px;
+    transform: translateX(-50%) translateY(-100%);
+  }
+}
+
+// Posições da tooltip: left, right, top, bottom
+[tooltip-left] {
+  &::before {
+    left: 0;
+    margin-left: -12px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+  }
+
+  &::after {
+    content: attr(tooltip-left);
+    left: 0;
+    margin-left: -8px;
+    top: 50%;
+    transform: translateX(-100%) translateY(-50%);
+  }
+}
+
+[tooltip-right] {
+  &::before {
+    left: 100%;
+    margin-left: 1px;
+    top: 50%;
+    transform: translatey(-50%) rotate(90deg);
+  }
+
+  &::after {
+    content: attr(tooltip-right);
+    left: 100%;
+    margin-left: 8px;
+    top: 50%;
+    transform: translateX(0%) translateY(-50%);
+  }
+}
+
+[tooltip-top] {
+  &::before {
+    left: 50%;
+  }
+
+  &::after {
+    content: attr(tooltip-top);
+    left: 50%;
+  }
+}
+
+[tooltip-bottom] {
+  &::before {
+    margin-top: 8px;
+    top: 100%;
+    transform: translateX(-50%) translatey(-100%) rotate(-180deg);
+  }
+
+  &::after {
+    content: attr(tooltip-bottom);
+    margin-top: 8px;
+    top: 100%;
+    transform: translateX(-50%) translateY(0%);
+  }
+}

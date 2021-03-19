@@ -1,5 +1,14 @@
+// Tokens
 @import './lib/tokens';
+
+// Mixins
 @import './lib/mixins/breakpoints';
+@import './lib/mixins/transition';
+
+// Components
+@import './lib/components/tooltip';
+
+// Theming
 @import './lib/theming/default';
 
 * {

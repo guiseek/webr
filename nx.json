@@ -21,6 +21,7 @@
     "workspace": { "tags": [] },
     "webr-forms": { "tags": ["type:ui"] },
     "webr-styles": { "tags": ["type:ui"] },
-    "webr-icons": { "tags": ["type:ui"] }
+    "webr-icons": { "tags": ["type:ui"] },
+    "webr-mask": { "tags": [] }
   }
 }

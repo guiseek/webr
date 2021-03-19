@@ -18,6 +18,9 @@ export class WebrLabelComponent {
   @HostBinding('attr.aria-live')
   addAriaLiveHostAttr = 'polite'
 
+  @HostBinding('attr.aria-atomic')
+  addingAriaAtomicHostAttr = true
+
   public readonly selectors = [
     'input[webr][type="text"]',
     'input[webr][type="email"]',
