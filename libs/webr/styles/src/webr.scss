@@ -1,3 +1,6 @@
+// 3rd party
+@import './lib/theming/cdk';
+
 // Tokens
 @import './lib/tokens';
 
@@ -6,6 +9,7 @@
 @import './lib/mixins/transition';
 
 // Components
+@import './lib/components/select';
 @import './lib/components/tooltip';
 
 // Theming

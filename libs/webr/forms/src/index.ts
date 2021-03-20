@@ -1,6 +1,6 @@
 export { WebrFieldLabelComponent } from './lib/field/label/label.component'
-export { WebrErrorComponent } from './lib/field/error/error.component'
 export { WebrCheckboxComponent } from './lib/input/checkbox.component'
+export { WebrOutputComponent } from './lib/output/output.component'
 export { WebrInputComponent } from './lib/input/input.component'
 export { WebrInputDirective } from './lib/input/input.directive'
 export { WebrLabelComponent } from './lib/label/label.component'

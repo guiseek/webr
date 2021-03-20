@@ -20,7 +20,18 @@ export class FormsComponent {
     password: ['', [WebrValidators.required, WebrValidators.minLength(6)]],
     cpf: ['', [WebrValidators.required, WebrValidators.cpf]],
     range: [15, [WebrValidators.required, WebrValidators.min(10)]],
+    select: ['', [WebrValidators.required]],
   })
+
+  options = [
+    { value: 1, label: 'Paris' },
+    { value: 2, label: 'Brasil' },
+    { value: 3, label: 'Singapore' },
+    { value: 4, label: 'Malaysia' },
+    { value: 5, label: 'Goa' },
+    { value: 6, label: 'Thailand' },
+  ]
+
   constructor(readonly fb: FormBuilder) {}
 
   onSubmit() {

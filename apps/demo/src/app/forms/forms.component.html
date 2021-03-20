@@ -118,6 +118,15 @@
       Mínimo 10
     </output>
   </fieldset>
+
+  <webr-select formControlName="select" placeholder="- Selecione -">
+    <webr-option
+      *ngFor="let item of options"
+      [key]="item.value"
+      [value]="item.label"
+    ></webr-option>
+  </webr-select>
+
 </form>
 
 <button form="demo" type="submit">Enviar!</button>
