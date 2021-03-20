@@ -6,7 +6,7 @@ import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core'
   template: `
     <ng-content [attr.select]="selectors"></ng-content>
     <ng-content select="span.label"></ng-content>
-    <ng-content select="span[webr-error]"></ng-content>
+    <ng-content select="output[webr][for]"></ng-content>
   `,
   styles: [],
 })

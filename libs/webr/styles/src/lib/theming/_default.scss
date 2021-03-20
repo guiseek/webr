@@ -322,7 +322,8 @@ label[webr-label] {
   }
 }
 
-span[webr-error] {
+span[webr-error],
+output[webr][for] {
   clear: both;
   display: flex;
   margin: 4px 6px 6px;

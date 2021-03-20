@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core'
     <ng-content select="span.label"></ng-content>
     <span class="highlight"></span>
     <span class="bar"></span>
-    <ng-content select="span[webr-error]"></ng-content>
+    <ng-content select="output[webr][for]"></ng-content>
   `,
 })
 export class WebrLabelComponent {
