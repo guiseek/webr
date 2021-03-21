@@ -1,0 +1,316 @@
+{
+  "color": {
+    "blue": {
+      "50": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(227, 242, 253, 1)",
+        "type": "color"
+      },
+      "100": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(187, 222, 251, 1)",
+        "type": "color"
+      },
+      "200": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(144, 202, 249, 1)",
+        "type": "color"
+      },
+      "300": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(100, 181, 246, 1)",
+        "type": "color"
+      },
+      "400": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(66, 165, 245, 1)",
+        "type": "color"
+      },
+      "500": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(33, 150, 243, 1)",
+        "type": "color"
+      },
+      "600": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(30, 136, 229, 1)",
+        "type": "color"
+      },
+      "700": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(25, 118, 210, 1)",
+        "type": "color"
+      },
+      "800": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(21, 101, 192, 1)",
+        "type": "color"
+      },
+      "900": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(13, 71, 161, 1)",
+        "type": "color"
+      },
+      "a100": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(130, 177, 255, 1)",
+        "type": "color"
+      },
+      "a200": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(68, 138, 255, 1)",
+        "type": "color"
+      },
+      "a400": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(41, 121, 255, 1)",
+        "type": "color"
+      },
+      "a700": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(41, 98, 255, 1)",
+        "type": "color"
+      }
+    },
+    "deep purple": {
+      "50": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(237, 231, 246, 1)",
+        "type": "color"
+      },
+      "100": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(209, 196, 233, 1)",
+        "type": "color"
+      },
+      "200": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(179, 157, 219, 1)",
+        "type": "color"
+      },
+      "300": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(149, 117, 205, 1)",
+        "type": "color"
+      },
+      "400": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(126, 87, 194, 1)",
+        "type": "color"
+      },
+      "500": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(103, 58, 183, 1)",
+        "type": "color"
+      },
+      "600": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(94, 53, 177, 1)",
+        "type": "color"
+      },
+      "700": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(81, 45, 168, 1)",
+        "type": "color"
+      },
+      "800": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(69, 39, 160, 1)",
+        "type": "color"
+      },
+      "900": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(49, 27, 146, 1)",
+        "type": "color"
+      },
+      "a100": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(179, 136, 255, 1)",
+        "type": "color"
+      },
+      "a200": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(124, 77, 255, 1)",
+        "type": "color"
+      },
+      "a400": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(101, 31, 255, 1)",
+        "type": "color"
+      },
+      "a700": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(98, 0, 234, 1)",
+        "type": "color"
+      }
+    },
+    "purple": {
+      "50": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(243, 229, 245, 1)",
+        "type": "color"
+      },
+      "100": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(225, 190, 231, 1)",
+        "type": "color"
+      },
+      "200": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(225, 190, 231, 1)",
+        "type": "color"
+      },
+      "300": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(186, 104, 200, 1)",
+        "type": "color"
+      },
+      "400": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(171, 71, 188, 1)",
+        "type": "color"
+      },
+      "500": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(156, 39, 176, 1)",
+        "type": "color"
+      },
+      "600": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(142, 36, 170, 1)",
+        "type": "color"
+      },
+      "700": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(123, 31, 162, 1)",
+        "type": "color"
+      },
+      "800": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(106, 27, 154, 1)",
+        "type": "color"
+      },
+      "900": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(74, 20, 140, 1)",
+        "type": "color"
+      },
+      "a100": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(234, 128, 252, 1)",
+        "type": "color"
+      },
+      "a200": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(224, 64, 251, 1)",
+        "type": "color"
+      },
+      "a400": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(213, 0, 249, 1)",
+        "type": "color"
+      },
+      "a700": {
+        "category": "fill",
+        "comment": null,
+        "value": "rgba(170, 0, 255, 1)",
+        "type": "color"
+      }
+    },
+    "action": {
+      "background": {
+        "primary": {
+          "hover": {
+            "on-light": {
+              "category": "fill",
+              "comment": null,
+              "value": "rgba(103, 58, 183, 0.04)",
+              "type": "color"
+            }
+          },
+          "focused": {
+            "on-light": {
+              "category": "fill",
+              "comment": null,
+              "value": "rgba(103, 58, 183, 0.12)",
+              "type": "color"
+            }
+          },
+          "pressed": {
+            "on-light": {
+              "category": "fill",
+              "comment": null,
+              "value": "rgba(103, 58, 183, 0.1)",
+              "type": "color"
+            }
+          },
+          "dragged": {
+            "on-light": {
+              "category": "fill",
+              "comment": null,
+              "value": "rgba(103, 58, 183, 0.08)",
+              "type": "color"
+            }
+          },
+          "disabled": {
+            "on-light": {
+              "category": "fill",
+              "comment": null,
+              "value": "rgba(255, 255, 255, 1)",
+              "type": "color"
+            }
+          },
+          "default": {
+            "on-light": {
+              "category": "fill",
+              "comment": null,
+              "value": "rgba(255, 255, 255, 1)",
+              "type": "color"
+            }
+          }
+        }
+      }
+    }
+  }
+}
