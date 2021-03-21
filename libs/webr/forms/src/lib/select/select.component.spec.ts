@@ -1,25 +1,28 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { WebrSelectPanelComponent } from './select-panel.component'
+import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { OverlayModule } from '@angular/cdk/overlay'
+import { PortalModule } from '@angular/cdk/portal'
 
-import { SelectComponent } from './select.component';
+import { WebrSelectComponent } from './select.component'
 
-describe('SelectComponent', () => {
-  let component: SelectComponent;
-  let fixture: ComponentFixture<SelectComponent>;
+describe('WebrSelectComponent', () => {
+  let component: WebrSelectComponent
+  let fixture: ComponentFixture<WebrSelectComponent>
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SelectComponent ]
-    })
-    .compileComponents();
-  });
+      declarations: [WebrSelectComponent, WebrSelectPanelComponent],
+      imports: [PortalModule, OverlayModule],
+    }).compileComponents()
+  })
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SelectComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(WebrSelectComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

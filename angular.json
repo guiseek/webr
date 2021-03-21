@@ -309,6 +309,27 @@
           }
         }
       }
+    },
+    "webr-mixins": {
+      "root": "libs/webr/mixins",
+      "sourceRoot": "libs/webr/mixins/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/webr/mixins/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/webr/mixins"],
+          "options": {
+            "jestConfig": "libs/webr/mixins/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

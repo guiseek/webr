@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OutputComponent } from './output.component';
+import { WebrOutputComponent } from './output.component';
 
-describe('OutputComponent', () => {
-  let component: OutputComponent;
-  let fixture: ComponentFixture<OutputComponent>;
+describe('WebrOutputComponent', () => {
+  let component: WebrOutputComponent;
+  let fixture: ComponentFixture<WebrOutputComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OutputComponent ]
+      declarations: [ WebrOutputComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OutputComponent);
+    fixture = TestBed.createComponent(WebrOutputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
