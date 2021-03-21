@@ -82,7 +82,7 @@ export class WebrSelectPanelComponent {
       return
     }
 
-    const refRect = this.reference.getBoundingClientRect()
+    const refRect = this.reference?.getBoundingClientRect()
     this.overlayRef.updateSize({ width: refRect.width })
   }
 }

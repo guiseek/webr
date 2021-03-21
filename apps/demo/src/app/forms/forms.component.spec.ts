@@ -1,3 +1,4 @@
+import { WebrIconsModule } from '@webr/icons'
 import { WebrFormsModule } from '@webr/forms'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { RouterTestingModule } from '@angular/router/testing'
@@ -12,7 +13,12 @@ describe('FormsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [FormsComponent],
-      imports: [ReactiveFormsModule, RouterTestingModule, WebrFormsModule],
+      imports: [
+        ReactiveFormsModule,
+        RouterTestingModule,
+        WebrIconsModule.forRoot(),
+        WebrFormsModule,
+      ],
     }).compileComponents()
   })
 
