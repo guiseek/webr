@@ -1,7 +1,7 @@
-import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Todo } from '../../models/todo';
+import { InMemoryDbService } from 'angular-in-memory-web-api'
+import { Todo } from '../../models/todo'
 
-const INITIAL_ID = 1;
+const INITIAL_ID = 1
 
 export class TodosData implements InMemoryDbService {
   createDb() {
@@ -23,11 +23,13 @@ export class TodosData implements InMemoryDbService {
         isDone: true,
         isBusiness: true,
       },
-    ];
-    return { todos };
+    ]
+    return { todos }
   }
 
   genId(todos: Todo[]): number {
-    return todos.length > 0 ? Math.max(...todos.map((todo) => todo.id)) + 1 : INITIAL_ID;
+    return todos.length > 0
+      ? Math.max(...todos.map((todo) => todo.id)) + 1
+      : INITIAL_ID
   }
 }

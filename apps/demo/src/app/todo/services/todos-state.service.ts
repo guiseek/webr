@@ -1,28 +1,12 @@
+import { TodosApiService } from './api/todos-api.service'
+import { map, shareReplay } from 'rxjs/operators'
+import { TodoState } from '../models/todo-state'
 import { Injectable } from '@angular/core'
+import { Filter } from '../models/filter'
 import { WebrState } from '@webr/state'
 import { Todo } from '../models/todo'
-import { Filter } from '../models/filter'
 import { Observable } from 'rxjs'
-import { map, shareReplay } from 'rxjs/operators'
-import { TodosApiService } from './api/todos-api.service'
-
-interface TodoState {
-  todos: Todo[]
-  selectedTodoId: number
-  filter: Filter
-}
-
-const initialState: TodoState = {
-  todos: [],
-  selectedTodoId: undefined,
-  filter: {
-    search: '',
-    category: {
-      isBusiness: false,
-      isPrivate: false,
-    },
-  },
-}
+import { initialState } from './api/initial-state'
 
 function getTodosFiltered(todos: Todo[], filter: Filter): Todo[] {
   return todos.filter((item) => {
@@ -33,7 +17,6 @@ function getTodosFiltered(todos: Todo[], filter: Filter): Todo[] {
     )
   })
 }
-
 
 @Injectable({ providedIn: 'root' })
 export class TodosStateService extends WebrState<TodoState> {
@@ -52,10 +35,7 @@ export class TodosStateService extends WebrState<TodoState> {
       return new Todo()
     }
     return state.todos.find((item) => item.id === state.selectedTodoId)
-  }).pipe(
-    // Multicast to prevent multiple executions due to multiple subscribers
-    shareReplay({ refCount: true, bufferSize: 1 })
-  )
+  }).pipe(shareReplay({ refCount: true, bufferSize: 1 }))
 
   constructor(private apiService: TodosApiService) {
     super(initialState)
