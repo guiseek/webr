@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core'
+import { WebrLabel } from './label.interface'
 
 @Component({
   selector: 'label[webr]',
@@ -11,7 +12,7 @@ import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core'
     <ng-content select="output[webr][for]"></ng-content>
   `,
 })
-export class WebrLabelComponent {
+export class WebrLabelComponent implements WebrLabel {
   @HostBinding('class.webr')
   addingWebrHostClass = true
 

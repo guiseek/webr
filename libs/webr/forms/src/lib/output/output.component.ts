@@ -1,4 +1,5 @@
 import { AbstractControl, ControlContainer } from '@angular/forms'
+import { WebrOutput } from './output.interface'
 import {
   Input,
   Optional,
@@ -6,13 +7,6 @@ import {
   HostBinding,
   AfterViewInit,
 } from '@angular/core'
-
-export interface WebrOutputComponent {
-  readonly form?: string
-  status?: string
-  name?: string
-  for: string
-}
 
 export function coerceInitialError(ctrl: AbstractControl) {
   return !(ctrl.invalid && ctrl.touched)
@@ -33,7 +27,7 @@ export function coerceInitialError(ctrl: AbstractControl) {
     </span>
   `,
 })
-export class WebrOutputComponent implements AfterViewInit {
+export class WebrOutputComponent implements WebrOutput, AfterViewInit {
   @Input() control?: AbstractControl | null
 
   /**
