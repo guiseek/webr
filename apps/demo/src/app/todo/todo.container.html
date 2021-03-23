@@ -1,0 +1,36 @@
+<button class="btn btn-primary btn-sm" (click)="addTodo()">Nova</button>
+<webr-filter
+  (filterUpdate)="onFilterUpdate($event)"
+  [filter]="filter$ | async"
+></webr-filter>
+
+<webr-todo-detail
+  *ngIf="selectedTodo$ | async as selectedTodo"
+  [todo]="selectedTodo"
+></webr-todo-detail>
+
+<article>
+  <section>
+    <h2>Tarefas</h2>
+    <webr-todo-list
+      [todos]="todosNotDone$ | async"
+      [selectedTodo]="selectedTodo$ | async"
+      (selectTodo)="selectTodo($event)"
+    ></webr-todo-list>
+  </section>
+
+  <section>
+    <h2>Tarefa concluídas</h2>
+    <webr-todo-list
+      [todos]="todosDone$ | async"
+      [selectedTodo]="selectedTodo$ | async"
+      (selectTodo)="selectTodo($event)"
+    ></webr-todo-list>
+  </section>
+</article>
+<aside>
+  <webr-todo-detail
+    *ngIf="selectedTodo$ | async as selectedTodo"
+    [todo]="selectedTodo"
+  ></webr-todo-detail>
+</aside>

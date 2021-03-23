@@ -1,0 +1,16 @@
+<form [formGroup]="formGroup" class="d-flex m-0">
+  <label webr>
+    <span class="label">Pesquisas tarefa</span>
+    <input webr type="search" formControlName="search" />
+  </label>
+  <div class="form-check" formGroupName="category">
+    <label webr-label>
+      <input webr type="checkbox" formControlName="isBusiness" />
+      <span class="label">Negócios</span>
+    </label>
+    <label webr-label>
+      <input webr type="checkbox" formControlName="isPrivate" />
+      <span class="label">Privado</span>
+    </label>
+  </div>
+</form>

@@ -26,8 +26,8 @@ export class WebrFieldComponent implements AfterContentInit {
   @HostBinding('attr.aria-live')
   addAriaLiveHostAttr = 'polite'
 
-  @HostBinding('attr.aria-atomic')
-  addingAriaAtomicHostAttr = true
+  // @HostBinding('attr.aria-atomic')
+  // addingAriaAtomicHostAttr = true
 
   @ContentChild(NgControl) control!: NgControl
   ngAfterContentInit(): void {
