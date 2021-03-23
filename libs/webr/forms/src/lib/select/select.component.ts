@@ -1,6 +1,8 @@
+// import { WebrOptionComponent } from './interfaces/option.interface';
 import { ControlValueAccessor } from '../types/control-value-accessor'
 import { WebrSelectPanelComponent } from './select-panel.component'
 import { ActiveDescendantKeyManager } from '@angular/cdk/a11y'
+import { WebrSelect } from './interfaces/select.interface'
 import { WebrOptionComponent } from './option.component'
 import { WebrSelectService } from './select.service'
 import { NG_VALUE_ACCESSOR } from '@angular/forms'
@@ -29,7 +31,7 @@ const WebrSelectProvider = {
   providers: [WebrSelectService, WebrSelectProvider],
 })
 export class WebrSelectComponent
-  implements AfterContentInit, ControlValueAccessor {
+  implements WebrSelect, AfterContentInit, ControlValueAccessor {
   @Input()
   public label = ''
 
@@ -68,13 +70,23 @@ export class WebrSelectComponent
 
   public onTouchedFn = () => {}
 
-  private keyManager!: ActiveDescendantKeyManager<WebrOptionComponent>
+  private _keyManager!: ActiveDescendantKeyManager<WebrOptionComponent>
+
+  public get keyManager(): ActiveDescendantKeyManager<WebrOptionComponent> {
+    return this._keyManager
+  }
+  public set keyManager(
+    value: ActiveDescendantKeyManager<WebrOptionComponent>
+  ) {
+    this._keyManager = value
+  }
 
   constructor(
     readonly panelService: WebrSelectService,
     private _changeDetectorRef: ChangeDetectorRef
   ) {
     this.panelService.register(this)
+    this.keyManager = this.getKeyManager()
   }
 
   public ngAfterContentInit() {
@@ -83,12 +95,15 @@ export class WebrSelectComponent
       .find((option) => option.key === this.selected) as WebrOptionComponent
 
     this.displayText = this.selectedOption ? this.selectedOption.value : ''
-    this.keyManager = new ActiveDescendantKeyManager(this.options)
+    this.keyManager = this.getKeyManager()
+  }
+
+  getKeyManager() {
+    return new ActiveDescendantKeyManager(this.options)
       .withHorizontalOrientation('ltr')
       .withVerticalOrientation()
       .withWrap()
   }
-
   public showPanel() {
     this.panel.show()
 
@@ -105,16 +120,13 @@ export class WebrSelectComponent
     this.panel.hide()
   }
 
-  public onDropMenuIconClick(event: UIEvent) {
+  public onPanelMenuIconClick(event: UIEvent) {
     this.input.nativeElement.focus()
     this.input.nativeElement.click()
-
     this._changeDetectorRef.detectChanges()
   }
 
   public onKeyDown(event: KeyboardEvent) {
-    event.preventDefault()
-    // event.stopPropagation()
     let KEYS = ['Enter', ' ', 'ArrowDown', 'Down', 'ArrowUp', 'Up']
     if (KEYS.indexOf(event.key) > -1) {
       if (!this.panel.showing) {
@@ -144,6 +156,7 @@ export class WebrSelectComponent
       this.displayText = this.selectedOption ? this.selectedOption.value : ''
       this.hidePanel()
       this.onChange()
+      event.preventDefault()
     } else if (event.key === 'Escape' || event.key === 'Esc') {
       this.panel.showing && this.hidePanel()
     } else if (KEYS.indexOf(event.key) > -1) {
@@ -153,7 +166,7 @@ export class WebrSelectComponent
       event.key === 'PageDown' ||
       event.key === 'Tab'
     ) {
-      // this.panel.showing && event.preventDefault()
+      this.panel.showing && event.preventDefault()
     }
   }
 

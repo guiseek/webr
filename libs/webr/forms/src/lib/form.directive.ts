@@ -1,4 +1,5 @@
-import { AbstractControl, FormGroup } from '@angular/forms'
+import { WebrForm, FormSendEvent } from './form.interface'
+import { FormGroup } from './types/form-group'
 import {
   Input,
   Output,
@@ -8,18 +9,20 @@ import {
   AfterViewInit,
 } from '@angular/core'
 
-export type FormSendEvent = {
-  controls: Record<string, AbstractControl>
-  elements: HTMLFormControlsCollection
-}
-
 @Directive({ selector: 'form[webr][formGroup]' })
-export class WebrFormDirective implements AfterViewInit {
+export class WebrFormDirective implements WebrForm, AfterViewInit {
   @Input() formGroup = new FormGroup({})
 
   @Input() touchedOnSend = true
 
-  private readonly _form!: HTMLFormElement
+  private _form: HTMLFormElement
+
+  public set form(form: HTMLFormElement) {
+    this._form = form
+  }
+  public get form() {
+    return this._form
+  }
 
   @Output() send = new EventEmitter<FormSendEvent>()
 

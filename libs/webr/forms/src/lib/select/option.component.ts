@@ -1,13 +1,15 @@
 import { Component, HostBinding, HostListener, Input } from '@angular/core'
+import { WebrOption } from './interfaces/option.interface'
 import { WebrSelectComponent } from './select.component'
 import { WebrSelectService } from './select.service'
 import { Highlightable } from '@angular/cdk/a11y'
+import { WebrSelect } from './interfaces/select.interface'
 
 @Component({
   selector: 'webr-option',
   template: `{{ value }}`,
 })
-export class WebrOptionComponent implements Highlightable {
+export class WebrOptionComponent implements WebrOption, Highlightable {
   @Input()
   public key!: string
 
@@ -22,10 +24,18 @@ export class WebrOptionComponent implements Highlightable {
   @HostBinding('class.active')
   public active = false
 
-  private select: WebrSelectComponent
+  private _select: WebrSelect
+
+  public get select(): WebrSelect {
+    return this._select
+  }
+
+  public set select(value: WebrSelect) {
+    this._select = value
+  }
 
   constructor(private dropdownService: WebrSelectService) {
-    this.select = this.dropdownService.getSelect()
+    this._select = this.dropdownService.getSelect()
   }
 
   public getLabel(): string {
@@ -44,7 +54,6 @@ export class WebrOptionComponent implements Highlightable {
   public onClick(event: UIEvent) {
     event.preventDefault()
     event.stopPropagation()
-
     this.select.selectOption(this)
   }
 }
