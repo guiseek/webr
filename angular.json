@@ -330,6 +330,27 @@
           }
         }
       }
+    },
+    "webr-state": {
+      "root": "libs/webr/state",
+      "sourceRoot": "libs/webr/state/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/webr/state/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/webr/state"],
+          "options": {
+            "jestConfig": "libs/webr/state/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

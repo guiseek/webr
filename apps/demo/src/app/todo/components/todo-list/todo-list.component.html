@@ -1,0 +1,12 @@
+<ul>
+  <li
+    *ngFor="let todo of todos"
+    [ngClass]="{ active: selectedTodo?.id === todo.id }"
+  >
+    <a href="javascript:void(0)" (click)="selectTodo.emit(todo)">
+      {{ todo.title }}
+    </a>
+    <mark *ngIf="todo.isBusiness">Business</mark>
+    <mark *ngIf="todo.isPrivate">Private</mark>
+  </li>
+</ul>

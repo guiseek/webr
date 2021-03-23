@@ -9,8 +9,11 @@ import { WebrMaskModule } from '@webr/mask'
 
 import { FormsComponent } from './forms/forms.component'
 import { AppComponent } from './app.component'
-import { IconsComponent } from './icons/icons.component';
+import { IconsComponent } from './icons/icons.component'
 import { MaskComponent } from './mask/mask.component'
+import { HttpClientModule } from '@angular/common/http'
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api'
+import { TodosData } from './todo/services/api/todos-data'
 
 @NgModule({
   declarations: [AppComponent, FormsComponent, IconsComponent, MaskComponent],
@@ -18,6 +21,8 @@ import { MaskComponent } from './mask/mask.component'
     BrowserModule,
     WebrMaskModule,
     WebrFormsModule,
+    HttpClientModule,
+    HttpClientModule,
     ReactiveFormsModule,
     WebrIconsModule.forRoot({
       icons: ICONS,
@@ -25,10 +30,20 @@ import { MaskComponent } from './mask/mask.component'
         md: '24px',
       },
     }),
+    HttpClientInMemoryWebApiModule.forRoot(TodosData, {
+      delay: 500,
+      put204: false,
+    }),
     RouterModule.forRoot([
-      { path: '', component: FormsComponent },
+      { path: '', redirectTo: 'todo', pathMatch: 'full' },
+      { path: 'forms', component: FormsComponent },
       { path: 'icons', component: IconsComponent },
       { path: 'mask', component: MaskComponent },
+      {
+        path: 'todo',
+        loadChildren: () =>
+          import('./todo/todo.module').then((m) => m.TodoModule),
+      },
     ]),
   ],
   providers: [],

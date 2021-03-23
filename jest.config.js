@@ -6,5 +6,6 @@ module.exports = {
     '<rootDir>/libs/webr/icons',
     '<rootDir>/libs/webr/mask',
     '<rootDir>/libs/webr/mixins',
+    '<rootDir>/libs/webr/state',
   ],
 }

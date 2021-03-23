@@ -23,6 +23,7 @@
     "webr-styles": { "tags": ["type:ui"] },
     "webr-icons": { "tags": ["type:ui"] },
     "webr-mask": { "tags": [] },
-    "webr-mixins": { "tags": [] }
+    "webr-mixins": { "tags": [] },
+    "webr-state": { "tags": [] }
   }
 }

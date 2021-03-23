@@ -1,0 +1,55 @@
+<header>
+  <span>{{ todo?.id ? 'Editar tarefa' : 'Criar tarefa' }}</span>
+  <button type="button" (click)="onClose()">Fechar</button>
+</header>
+
+<section>
+  <form #form="ngForm">
+    <label webr>
+      <span class="label">Title</span>
+      <input webr type="text" name="title" [ngModel]="todo?.title" />
+      <output webr for="text">
+        <webr-svg-icon key="error_outline"></webr-svg-icon>
+        Obrigatório
+      </output>
+    </label>
+
+    <label webr-label>
+      <input
+        webr
+        type="checkbox"
+        name="isDone"
+        [ngModel]="todo?.isDone ? todo?.isDone : false"
+      />
+      <span class="label">Concluída</span>
+    </label>
+
+    <fieldset webr>
+      <legend>Categorias</legend>
+
+      <label webr-label>
+        <input
+          webr
+          type="checkbox"
+          name="isBusiness"
+          [ngModel]="todo?.isBusiness ? todo?.isBusiness : false"
+        />
+        <span class="label">Negócios</span>
+      </label>
+      <label webr-label>
+        <input
+          webr
+          type="checkbox"
+          name="isPrivate"
+          [ngModel]="todo?.isPrivate ? todo?.isPrivate : false"
+        />
+        <span class="label">Privado</span>
+      </label>
+    </fieldset>
+
+    <button (click)="submit(form)" [disabled]="!form.valid || !form.dirty">
+      Salvar
+    </button>
+    <button *ngIf="todo?.id" (click)="delete()">Apagar</button>
+  </form>
+</section>
