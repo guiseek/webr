@@ -7,7 +7,7 @@
   <form #form="ngForm">
     <label webr>
       <span class="label">Title</span>
-      <input webr type="text" name="title" [ngModel]="todo?.title" />
+      <input webr type="text" name="title" [ngModel]="todo?.title" required />
       <output webr for="text">
         <webr-svg-icon key="error_outline"></webr-svg-icon>
         Obrigatório
