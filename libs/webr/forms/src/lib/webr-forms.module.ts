@@ -1,3 +1,7 @@
+import { WebrButtonUnelevatedComponent } from './button//unelevated.component'
+import { WebrButtonOutlinedComponent } from './button//outlined.component'
+import { WebrButtonContainedComponent } from './button//contained.component'
+import { WebrButtonTextComponent } from './button//text.component'
 import { WebrFieldLabelComponent } from './field/label/label.component'
 import { WebrTextareaDirective } from './input/textarea.directive'
 import { WebrCheckboxComponent } from './input/checkbox.component'
@@ -36,6 +40,10 @@ import { NgModule } from '@angular/core'
     WebrSelectComponent,
     WebrOptionComponent,
     WebrSelectPanelComponent,
+    WebrButtonUnelevatedComponent,
+    WebrButtonOutlinedComponent,
+    WebrButtonContainedComponent,
+    WebrButtonTextComponent,
   ],
   exports: [
     WebrFormDirective,
@@ -52,6 +60,10 @@ import { NgModule } from '@angular/core'
     WebrSelectComponent,
     WebrOptionComponent,
     WebrSelectPanelComponent,
+    WebrButtonUnelevatedComponent,
+    WebrButtonOutlinedComponent,
+    WebrButtonContainedComponent,
+    WebrButtonTextComponent,
   ],
 })
 export class WebrFormsModule {}

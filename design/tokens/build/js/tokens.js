@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 21 Mar 2021 03:55:15 GMT
+ * Generated on Wed, 24 Mar 2021 16:32:29 GMT
  */
 
 export const ColorPrimary = "#0ac07d";
@@ -10,6 +10,11 @@ export const ColorWhite = "#ffffff";
 export const ColorBlack = "#111111";
 export const ColorBackground = "#ffffff";
 export const ColorMuted = "#ffffff";
+export const ColorSurface = "#111111";
+export const ColorOnPrimary = "#ffffff";
+export const ColorOnSecondary = "#ffffff";
+export const ColorOnError = "#ffffff";
+export const ColorOnSurface = "#ffffff";
 export const FormsColorFocused = "rgba(10, 192, 125, 0.2)";
 export const FormsColorUnchecked = "rgba(10, 192, 125, 0.2)";
 export const FormsColorDisabled = "rgba(10, 192, 125, 0.1)";

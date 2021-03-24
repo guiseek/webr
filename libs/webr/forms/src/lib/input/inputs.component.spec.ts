@@ -100,7 +100,9 @@ describe('Webr Text Inputs', () => {
   })
 
   it('ele deve iniciar inválido', async () => {
-    expect(spectator.component.formInvalid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-invalid')
+    ).toBeTruthy()
   })
 
   it('ele deve iniciar no estado não tocado', async () => {
@@ -113,13 +115,19 @@ describe('Webr Text Inputs', () => {
 
   it('entrando com texto, deve mudar para válido', async () => {
     spectator.hostComponent.form?.patchValue({ text: 'valor' })
-    expect(spectator.component.formInvalid).toBeFalsy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-invalid')
+    ).toBeFalsy()
   })
 
   it('ao entrar com texto, deve mudar para válido', async () => {
     spectator.hostComponent.form?.patchValue({ text: 'valor' })
-    expect(spectator.component.formInvalid).toBeFalsy()
-    expect(spectator.component.formValid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-invalid')
+    ).toBeFalsy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-valid')
+    ).toBeTruthy()
   })
 
   it('suas classes devem representar o estado de válido', async () => {
@@ -148,17 +156,21 @@ describe('Webr Email Input', () => {
   })
 
   it('deve iniciar válido', async () => {
-    expect(spectator.component.formValid)
+    expect(spectator.component.webrInputStates.includes('webr-valid'))
   })
 
   it('ao entrar com um nome deve ficar inválido', async () => {
     spectator.hostComponent.form.patchValue({ email: 'gui' })
-    expect(spectator.component.formInvalid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-invalid')
+    ).toBeTruthy()
   })
 
   it('ao entrar com um email deve ficar válido', async () => {
     spectator.hostComponent.form.patchValue({ email: 'email@guiseek.dev' })
-    expect(spectator.component.formValid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-valid')
+    ).toBeTruthy()
   })
 })
 
@@ -175,17 +187,21 @@ describe('Webr Password Input', () => {
   })
 
   it('deve iniciar inválido', async () => {
-    expect(spectator.component.formInvalid)
+    expect(spectator.component.webrInputStates.includes('webr-invalid'))
   })
 
   it('ao entrar com 3 letras deve manter inválido', async () => {
     spectator.hostComponent.form.patchValue({ password: 's3n' })
-    expect(spectator.component.formInvalid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-invalid')
+    ).toBeTruthy()
   })
 
   it('ao entrar com mais de 6 caracteres deve ficar válido', async () => {
     spectator.hostComponent.form.patchValue({ password: 's3nh4fr4c4' })
-    expect(spectator.component.formValid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-valid')
+    ).toBeTruthy()
   })
 })
 
@@ -202,17 +218,21 @@ describe('Webr CPF Input', () => {
   })
 
   it('deve iniciar válido', async () => {
-    expect(spectator.component.formValid)
+    expect(spectator.component.webrInputStates.includes('webr-valid'))
   })
 
   it('ao entrar com um nome deve ficar inválido', async () => {
     spectator.hostComponent.form.patchValue({ cpf: 'gui' })
-    expect(spectator.component.formInvalid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-invalid')
+    ).toBeTruthy()
   })
 
   it('ao entrar com um CPF deve ficar válido', async () => {
     spectator.hostComponent.form.patchValue({ cpf: '000.000.000-00' })
-    expect(spectator.component.formValid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-valid')
+    ).toBeTruthy()
   })
 })
 
@@ -229,7 +249,9 @@ describe('Webr Number Inputs', () => {
   })
 
   it('ele deve iniciar válido', async () => {
-    expect(spectator.component.formValid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-valid')
+    ).toBeTruthy()
   })
 
   it('ele deve iniciar no estado não tocado', async () => {
@@ -242,13 +264,19 @@ describe('Webr Number Inputs', () => {
 
   it('entrando com 10, deve mudar para inválido', async () => {
     spectator.hostComponent.form?.patchValue({ number: 10 })
-    expect(spectator.component.formInvalid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-invalid')
+    ).toBeTruthy()
   })
 
   it('ao alterar para 18, deve mudar para válido', async () => {
     spectator.hostComponent.form?.patchValue({ number: 18 })
-    expect(spectator.component.formInvalid).toBeFalsy()
-    expect(spectator.component.formValid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-invalid')
+    ).toBeFalsy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-valid')
+    ).toBeTruthy()
   })
 
   it('suas classes devem representar o estado de válido', async () => {
@@ -277,7 +305,9 @@ describe('Webr Textarea', () => {
   })
 
   it('ele deve iniciar inválido', async () => {
-    expect(spectator.component.formInvalid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-invalid')
+    ).toBeTruthy()
   })
 
   it('ele deve iniciar no estado não tocado', async () => {
@@ -290,13 +320,19 @@ describe('Webr Textarea', () => {
 
   it('entrando com 2 letras, deve manter inválido', async () => {
     spectator.hostComponent.form?.patchValue({ textarea: 'oi' })
-    expect(spectator.component.formInvalid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-invalid')
+    ).toBeTruthy()
   })
 
   it('entrando com 3 letras, deve mudar para válido', async () => {
     spectator.hostComponent.form?.patchValue({ textarea: 'tudo bem?' })
-    expect(spectator.component.formValid).toBeTruthy()
-    expect(spectator.component.formInvalid).toBeFalsy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-valid')
+    ).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-invalid')
+    ).toBeFalsy()
   })
 
   it('suas classes devem representar o estado de válido', async () => {
@@ -325,7 +361,9 @@ describe('Webr Radio Input', () => {
   })
 
   it('ele deve iniciar válido', async () => {
-    expect(spectator.component.formValid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-valid')
+    ).toBeTruthy()
   })
 
   it('ele deve iniciar no estado não tocado', async () => {
@@ -338,13 +376,19 @@ describe('Webr Radio Input', () => {
 
   it('entrando com B, deve mudar para inválido', async () => {
     spectator.hostComponent.form?.patchValue({ radio: 'B' })
-    expect(spectator.component.formInvalid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-invalid')
+    ).toBeTruthy()
   })
 
   it('ao alterar para 18, deve mudar para válido', async () => {
     spectator.hostComponent.form?.patchValue({ radio: 'A' })
-    expect(spectator.component.formInvalid).toBeFalsy()
-    expect(spectator.component.formValid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-invalid')
+    ).toBeFalsy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-valid')
+    ).toBeTruthy()
   })
 
   it('suas classes devem representar o estado de válido', async () => {
@@ -373,7 +417,9 @@ describe('Webr Range Input', () => {
   })
 
   it('ele deve iniciar válido', async () => {
-    expect(spectator.component.formValid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-valid')
+    ).toBeTruthy()
   })
 
   it('ele deve iniciar no estado não tocado', async () => {
@@ -386,13 +432,19 @@ describe('Webr Range Input', () => {
 
   it('entrando com B, deve mudar para inválido', async () => {
     spectator.hostComponent.form?.patchValue({ range: 6 })
-    expect(spectator.component.formInvalid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-invalid')
+    ).toBeTruthy()
   })
 
   it('ao alterar para 18, deve mudar para válido', async () => {
     spectator.hostComponent.form?.patchValue({ range: 20 })
-    expect(spectator.component.formInvalid).toBeFalsy()
-    expect(spectator.component.formValid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-invalid')
+    ).toBeFalsy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-valid')
+    ).toBeTruthy()
   })
 
   it('suas classes devem representar o estado de válido', async () => {
@@ -419,7 +471,9 @@ describe('Webr Checkbox Input', () => {
 
   it('checkbox deve iniciar inválido', async () => {
     spectator = createHost(`${TMPL.BEGIN} ${TMPL.CHECKBOX} ${TMPL.END}`)
-    expect(spectator.component.formInvalid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-invalid')
+    ).toBeTruthy()
   })
   it('checkbox deve iniciar no estado não tocado', async () => {
     spectator = createHost(`${TMPL.BEGIN} ${TMPL.CHECKBOX} ${TMPL.END}`)
@@ -428,7 +482,9 @@ describe('Webr Checkbox Input', () => {
 
   it('checked deve iniciar válido', async () => {
     spectator = createHost(`${TMPL.BEGIN} ${TMPL.CHECKED} ${TMPL.END}`)
-    expect(spectator.component.formValid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-valid')
+    ).toBeTruthy()
   })
   it('checked iniciar no estado não tocado', async () => {
     spectator = createHost(`${TMPL.BEGIN} ${TMPL.CHECKED} ${TMPL.END}`)
@@ -437,7 +493,9 @@ describe('Webr Checkbox Input', () => {
 
   it('indeterminado deve iniciar válido', async () => {
     spectator = createHost(`${TMPL.BEGIN} ${TMPL.INDETERMINATE} ${TMPL.END}`)
-    expect(spectator.component.formValid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-valid')
+    ).toBeTruthy()
   })
   it('indeterminado iniciar no estado não tocado', async () => {
     spectator = createHost(`${TMPL.BEGIN} ${TMPL.INDETERMINATE} ${TMPL.END}`)
@@ -461,7 +519,9 @@ describe('Webr Checkbox Input', () => {
     spyOn(spectator.hostComponent.form, 'valueChanges')
     spectator.hostComponent.form.patchValue({ checkbox: true })
     spectator.detectChanges()
-    expect(spectator.component.formValid).toBeTruthy()
+    expect(
+      spectator.component.webrInputStates.includes('webr-valid')
+    ).toBeTruthy()
   })
 
   it('suas classes devem representar o estado de válido', async () => {
